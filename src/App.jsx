@@ -1,5 +1,5 @@
 import "./App.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
 import { MusicContext } from "./Context";

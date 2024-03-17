@@ -19,7 +19,7 @@ function LikedMusic() {
         <div className="container">
           <div className="row">
             <div className="col">
-              <h3 className="py-5 text-center">
+              <h3 className="py-5 text-center font-monospace">
                 You don't have any liked music yet!
               </h3>
               <div className="text-center">

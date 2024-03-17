@@ -49,7 +49,7 @@ function Card({ element }) {
 
   return (
     <div key={element.id} className="col-lg-3 col-md-6 py-2">
-      <div className="card">
+      <div className="card rounded bg-white border shadow">
         <div className="ratio ratio-1x1 bg-secondary bg-opacity-25">
           <img
             src={element.album.images[0].url}
@@ -59,7 +59,7 @@ function Card({ element }) {
         </div>
 
         <div className="card-body">
-          <h5 className="card-title d-flex justify-content-between">
+          <h5 className="card-title d-flex font-monospace justify-content-between">
             {element.name}
             <div className="add-options d-flex align-items-start">
               {pinnedMusic.some((item) => item.id === element.id) ? (
