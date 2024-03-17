@@ -1,8 +1,6 @@
 import "./App.css";
 import { useContext, useEffect, useState } from "react";
 import Card from "./components/Card";
-import CreatePlaylist from "./components/CreatePlaylist";
-import { initializePlaylist } from "./initialize";
 import Navbar from "./components/Navbar";
 import { MusicContext } from "./Context";
 import Music from "./assets/Music.gif";
@@ -10,15 +8,13 @@ import Playing from "./assets/Playing jazz.gif";
 
 function App() {
   const [keyword, setKeyword] = useState("");
-  const [message, setMessage] = useState("");
+  const [setMessage] = useState("");
   const [tracks, setTracks] = useState([]);
-  const [token, setToken] = useState(null);
+  const [token] = useState(null);
 
   const musicContext = useContext(MusicContext);
   const isLoading = musicContext.isLoading;
   const setIsLoading = musicContext.setIsLoading;
-  const setLikedMusic = musicContext.setLikedMusic;
-  const setPinnedMusic = musicContext.setPinnedMusic;
   const resultOffset = musicContext.resultOffset;
   const setResultOffset = musicContext.setResultOffset;
 
@@ -57,35 +53,6 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    initializePlaylist();
-
-    const fetchToken = async () => {
-      try {
-        const response = await fetch("https://accounts.spotify.com/api/token", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: "grant_type=client_credentials&client_id=a77073181b7d48eb90003e3bb94ff88a&client_secret=68790982a0554d1a83427e061e371507",
-        });
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch token");
-        }
-
-        const jsonData = await response.json();
-        setToken(jsonData.access_token);
-      } catch (error) {
-        setMessage(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchToken();
-    setLikedMusic(JSON.parse(localStorage.getItem("likedMusic")));
-    setPinnedMusic(JSON.parse(localStorage.getItem("pinnedMusic")));
-  }, [setIsLoading, setLikedMusic, setPinnedMusic]);
 
   return (
     <>
@@ -140,7 +107,6 @@ function App() {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <CreatePlaylist />
       </div>
     </>
   );
