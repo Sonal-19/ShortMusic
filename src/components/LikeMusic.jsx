@@ -19,11 +19,13 @@ function LikedMusic() {
         <div className="container">
           <div className="row">
             <div className="col">
-              <h3 className="py-5 text-center font-monospace">
+              <h3 className="text-center font-monospace">
                 You don't have any liked music yet!
               </h3>
               <div className="text-center">
-                <i className="bi bi-emoji-frown fs-1"></i>{" "}
+              <img src="https://img.freepik.com/free-vector/cute-cat-eating-dango-mochi-onigiri-cartoon-vector-icon-illustration-animal-food-icon-concept-isolated-
+              premium-vector-flat-cartoon-style_138676-4100.jpg?size=626&ext=jpg" alt=""  
+              className="imgp"/>
               </div>
             </div>
           </div>
