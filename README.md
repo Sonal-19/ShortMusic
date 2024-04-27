@@ -1,4 +1,6 @@
-# React + Vite
+# ShortMusic
+
+![Screenshot (200)](https://github.com/Sonal-19/ShortMusic/assets/84495252/66f35fee-0e39-4681-b0ea-58cb0e0c23e5)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
